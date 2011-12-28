@@ -1,0 +1,21 @@
+ ------
+ Usage
+ ------
+ EJ Ciramella
+ ------
+ 2011-05-26
+ ------
+
+General Usage
+
+  This plugin is for simplifying the images that may be used throughout your project.  From documentation to installer and beyond.
+  
+* The <<<imagegen:generate>>> Goal
+
+  The <<<imagegen:generate>>> goal is bound to the <<<generate-sources>>> phase.  This goal generates the image as configured by the user.
+  
+  To generate the image directly, you can run the following goal:
+
++-----+
+mvn imagegen:generate
++-----+

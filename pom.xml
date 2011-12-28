@@ -1,0 +1,319 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>imagegen-maven-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Image Generator Plugin</name>
+  <description>
+    This plugin is for generating images during your build process for use by downstream build related items such as an installer.
+  </description>
+  
+  <!--
+  Other options should be:
+  
+  border?
+
+  -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <locales>en</locales>
+        </configuration>
+      </plugin>
+      <!--
+				<plugin>
+		            <groupId>org.apache.maven.pluginss</groupId>
+		            <artifactId>imagegen-maven-plugin</artifactId>
+		            <version>${project.version}</version>
+                             <configuration>
+                             
+                             	<gradient>false</gradient>
+                             	<type>png</type>
+                             	<height>1000</height>
+                             	<width>1000</width>
+                             	<colorSolid>
+                             		<r>0</r>
+                             		<g>189</g>
+                             		<b>255</b>
+                             	</colorSolid>
+                             	<copyright>
+									<x>10</x>
+									<y>20</y>
+                                    <shadow>true</shadow>
+									<text>2011 FOO, LLC.</text>
+									<font>Verdana</font>
+									<fontsize>20</fontsize>
+                             	</copyright>
+                             	<textFields>
+                             		<textField>
+	                             		<x>100</x>
+										<y>250</y>
+                                        <shadow>true</shadow>
+										<text>SDFSDFSDFSDFSD sss</text>
+										<font>Arial Narrow</font>
+		                             	<fontsize>20</fontsize>
+                             		</textField>
+                             		<textField>
+	                             		<x>100</x>
+										<y>100</y>
+                                        <shadow>true</shadow>
+										<text>BLAH BLAH BLAH</text>
+										<font>Arial Narrow</font>
+		                             	<fontsize>40</fontsize>
+                             		</textField>
+                             	</textFields>
+                             	<imageOverlays>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>400</y>
+                                        <shadow>true</shadow>
+										<imagePath><insert path to an image here.  Put one in SRC and TEST</imagePath>
+                                        -->
+                                        <!-- by NOT having scaling here, we should default to 100% -->
+                                        <!--
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>800</y>
+                                        <shadow>true</shadow>
+										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                             	<scaling>2</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>100</y>
+										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>200</y>
+										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>350</y>
+										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             	</imageOverlays>
+                             </configuration>
+				</plugin>
+                -->
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-plugin-api</artifactId>
+      <version>2.0</version>
+    </dependency>
+  </dependencies>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.4</version>
+      </plugin>
+    </plugins>
+  </reporting>
+  <profiles>
+  	<profile>
+  		<id>imagegen-gradient</id>
+  		<build>
+			<plugins>
+				<plugin>
+		            <groupId>org.apache.maven.pluginss</groupId>
+		            <artifactId>imagegen-maven-plugin</artifactId>
+		            <version>${project.version}</version>
+                    <executions>
+                         <execution>
+                             <id>generateImage</id>
+                             <phase>generate-sources</phase>
+                             <goals>
+                                 <goal>generate</goal>
+                             </goals>
+                             <configuration>
+                             	<gradient>true</gradient>
+                             	<type>png</type>
+                             	<height>600</height>
+                             	<width>600</width>
+                             	<firstColorX>0</firstColorX>
+                             	<firstColorY>10</firstColorY>
+                             	<secondColorX>400</secondColorX>
+                             	<secondColorY>400</secondColorY>
+                             	<copyright>
+									<x>10</x>
+									<y>10</y>
+									<text>2011 Foo, LLC.</text>
+									<font>Dialog</font>
+									<fontsize>20</fontsize>
+                             	</copyright>
+                             	<textFields>
+                             		<textField>
+	                             		<x>100</x>
+										<y>250</y>
+										<text>SDFSDFSDFSDFSD</text>
+										<font>Dialog</font>
+		                             	<fontsize>12</fontsize>
+                             		</textField>
+                           		</textFields>
+                             	<colorStart>
+                             		<r>0</r>
+                             		<g>100</g>
+                             		<b>255</b>
+                             	</colorStart>
+                             	<colorEnd>
+                             		<r>0</r>
+                             		<g>189</g>
+                             		<b>30</b>
+                             	</colorEnd>
+                             </configuration>
+                         </execution>
+                    </executions>
+				</plugin>
+			</plugins>  		
+  		</build>
+  	</profile>
+  	<profile>
+  		<id>imagegen-solid-simple</id>
+  		<build>
+			<plugins>
+				<plugin>
+		            <groupId>org.apache.maven.pluginss</groupId>
+		            <artifactId>imagegen-maven-plugin</artifactId>
+		            <version>${project.version}</version>
+                    <executions>
+                         <execution>
+                             <id>generateImage</id>
+                             <phase>generate-sources</phase>
+                             <goals>
+                                 <goal>generate</goal>
+                             </goals>
+                             <configuration>
+                             	<gradient>false</gradient>
+                             	<type>png</type>
+                             	<height>1000</height>
+                             	<width>1000</width>
+                             	<colorSolid>
+                             		<r>0</r>
+                             		<g>189</g>
+                             		<b>255</b>
+                             	</colorSolid>
+                             </configuration>
+                         </execution>
+                    </executions>
+				</plugin>
+			</plugins>  		
+  		</build>
+  	</profile>
+  	<profile>
+  		<id>imagegen-solid</id>
+  		<build>
+			<plugins>
+				<plugin>
+		            <groupId>org.apache.maven.pluginss</groupId>
+		            <artifactId>imagegen-maven-plugin</artifactId>
+		            <version>${project.version}</version>
+                    <executions>
+                         <execution>
+                             <id>generateImage</id>
+                             <phase>generate-sources</phase>
+                             <goals>
+                                 <goal>generate</goal>
+                             </goals>
+                             <configuration>
+                             	<gradient>false</gradient>
+                             	<type>png</type>
+                             	<height>1000</height>
+                             	<width>1000</width>
+                             	<colorSolid>
+                             		<r>0</r>
+                             		<g>189</g>
+                             		<b>255</b>
+                             	</colorSolid>
+                             	<copyright>
+									<x>10</x>
+									<y>20</y>
+                                    <shadow>true</shadow>
+									<text>2011 Foo, LLC.</text>
+									<font>Monospaced.bolditalic</font>
+									<fontsize>20</fontsize>
+                                    <color>0,0,0</color>
+                             	</copyright>
+                             	<textFields>
+                             		<textField>
+	                             		<x>100</x>
+										<y>250</y>
+                                        <shadow>true</shadow>
+										<text>SDFSDFSDFSDFSD sss</text>
+										<font>Arial Narrow</font>
+		                             	<fontsize>20</fontsize>
+                                        <color>0,0,0</color>
+                             		</textField>
+                             		<textField>
+	                             		<x>100</x>
+										<y>100</y>
+                                        <shadow>true</shadow>
+										<text>FOO</text>
+										<font>Arial Narrow</font>
+		                             	<fontsize>40</fontsize>
+                                        <color>0,0,0</color>
+                             		</textField>
+                             	</textFields>
+                             	<imageOverlays>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>400</y>
+                                        <shadow>true</shadow>
+										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+                                        <!-- by NOT having scaling here, we should default to 100% -->
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>800</y>
+                                        <shadow>true</shadow>
+										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+		                             	<scaling>2</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>100</y>
+										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>200</y>
+										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             		<imageOverlay>
+	                             		<x>100</x>
+										<y>350</y>
+										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+		                             	<scaling>3</scaling>
+                             		</imageOverlay>
+                             	</imageOverlays>
+                             </configuration>
+                         </execution>
+                    </executions>
+				</plugin>
+			</plugins>  		
+  		</build>
+  	</profile>
+  </profiles>
+</project>

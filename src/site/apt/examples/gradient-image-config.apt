@@ -1,0 +1,173 @@
+Generating a Gradient Image
+
+* Configuration Options
+
+  By default, the ONLY configuration you need to supply are the following options:
+
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| Option     | Required? | Supported values | Definition                                                                                  |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| gradient   | Yes       | true/false       | This is the trigger for telling the plugin if it should generate a gradient or solid image. |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| type       | Yes       | png/jpg/both     | This tells the plugin to generate either a png image or a jpg image or both.  In testing,   |
+|            |           |                  | the png rendering was smoother than the jpg image.                                          |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| height     | Yes       | any reasonable   | This is the height of the image you want the plugin to generate.                            |
+|            |           | positive integer |                                                                                             |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| width      | Yes       | any reasonable   | This is the width of the image you want the plugin to generate.                             |
+|            |           | positive integer |                                                                                             |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| colorStart | Yes       | 0 - 255          | This configuration option represents the Red, Green and blue values of the image starging color for the background.|
+|            |           |                  |  You will need to supply a nested set of <<\<r\>>> <<\<g\>>> <<\<b\>>> values.  See below.  |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| colorEnd   | Yes       | 0 - 255          | This configuration option represents the Red, Green and blue values of the image ending color for the background.|
+|            |           |                  |  You will need to supply a nested set of <<\<r\>>> <<\<g\>>> <<\<b\>>> values.  See below.  |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| firstColorX | Yes       | 0 - height specified | This is the <<x>> coordinate of where the first color will begin.                      |
+|             |           |  above               |                                                                                        |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| firstColorY | Yes       | 0 - width specified  | This is the <<y>> coordinate of where the first color will begin.                      |
+|             |           |  above               |                                                                                        |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| secondColorX | Yes       | 0 - height specified | This is the <<x>> coordinate of where the second color will begin.                    |
+|              |           |  above               |                                                                                       |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+| secondColorY | Yes       | 0 - width specified  | This is the <<y>> coordinate of where the second color will begin.                    |
+|              |           |  above               |                                                                                       |
+*------------*-----------*------------------*---------------------------------------------------------------------------------------------+
+
+* Copyright Configuration Options
+
+  If you'd like to inject a copyright into your image, you can configure this block as well.  By default, this should inject the year the build happened in.
+  
+  It has the following options:
+
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| Option     | Required? | Supported values      | Definition                                                                                      |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| x          | Yes       | any reasonable        | This is the X coordinate within the image you are drawing for where to start the copyright text |
+|            |           | positive integer      |                                                                                                 |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| y          | Yes       | any reasonable        | This is the Y coordinate within the image you are drawing for where to start the copyright text |
+|            |           | positive integer      |                                                                                                 |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| font       | Yes       | any truetype font you | This will be the font your copyright is generated in.                                           |
+|            |           | have on your system   |                                                                                                 |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| fontsize   | Yes       | any reasonable        | Is is the point size of the font you have chosen above.                                         |
+|            |           | positive integer      |  You will need to supply a nested set of <<\<r\>>> <<\<g\>>> <<\<b\>>> values.  See below.      |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+| color      | No        | comman separated list | This will be a comma separated list of r/g/b numeric values between <<0>> and <<255.>>          |
+|            |           |       r,g,b           | If nothing is specified, it will default to black.                                              |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+  
+| shadow     | No        | true/false            | Set this to <<true>> if you would like a drop shadow under your copyright.                      |
+*------------*-----------*-----------------------*-------------------------------------------------------------------------------------------------+
+
+* TextField Configuration Options
+
+  The <<\<textFields\>>> stanza is similar to the <<\<copyright\>>> stanza, but it takes nested <<\<textField\>>> entries (notice the <<pluralization>>).
+  
+* ImageOverlay Configuration Options
+
+  If you'd like to inject an already existing image into your image, you can configure this block as well.  By default, this should inject the year the build happened in.
+  
+  It has the following options:
+
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| Option     | Required? | Supported values        | Definition                                                                                      |
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| x          | Yes       | any reasonable          | This is the X coordinate within the image you are drawing for where to start the copyright text |
+|            |           | positive integer        |                                                                                                 |
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| y          | Yes       | any reasonable          | This is the Y coordinate within the image you are drawing for where to start the copyright text |
+|            |           | positive integer        |                                                                                                 |
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| imagePath  | Yes       | a valid fully qualified | This will be the font your copyright is generated in.                                           |
+|            |           | system path             |                                                                                                 |
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| shadow     | No        | true/false              | Set this to <<true>> if you would like a drop shadow under your copyright.                      |
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+| scaling    | No        | 2 to infinity           | This is how much you would like to divide the supplied image's height and width by to shrink it.|
+*------------*-----------*-------------------------*-------------------------------------------------------------------------------------------------+
+
+* Example configuration
+
+  Below is an example of the plugin configuration.  You should be able to select and past that into your pom.xml file and modify it from there.
+
++-----+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>imagegen-maven-plugin</artifactId>
+    <version>${project.version}</version>
+    <executions>
+         <execution>
+             <id>generateImage</id>
+             <phase>generate-sources</phase>
+             <goals>
+                 <goal>generate</goal>
+             </goals>
+             <configuration>
+                <gradient>true</gradient>
+                <type>png</type>
+                <height>600</height>
+                <width>600</width>
+                <firstColorX>0</firstColorX>
+                <firstColorY>10</firstColorY>
+                <secondColorX>400</secondColorX>
+                <secondColorY>400</secondColorY>
+                <colorStart>
+                    <r>0</r>
+                    <g>100</g>
+                    <b>255</b>
+                </colorStart>
+                <colorEnd>
+                    <r>0</r>
+                    <g>189</g>
+                    <b>30</b>
+                </colorEnd>
+                <!-- OPTIONAL
+                <copyright>
+                    <x>10</x>
+                    <y>20</y>
+                    <text>2011 Foo, LLC.</text>
+                    <font>Monospaced.bolditalic</font>
+                    <fontsize>20</fontsize> -->
+                    <!-- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                    <!-- <color>0,0,0</color> --> <!-- OPTIONAL text will default to black if this is omitted. -->
+                <!--
+                </copyright>
+                -->
+                
+                <!-- OPTIONAL
+                <textFields>
+                    <textField>
+                        <x>100</x>
+                        <y>250</y>
+                        <text>Hello Image!</text>
+                        <font>Arial Narrow</font>
+                        <fontsize>20</fontsize> -->
+                        <!-- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                        <!-- <color>0,0,0</color> --> <!-- OPTIONAL text will default to black if this is omitted. -->
+                     <!--   
+                    </textField>
+                </textFields>
+                -->
+                <!-- OPTIONAL
+                <imageOverlays>
+                    <imageOverlay>
+                        <x>100</x>
+                        <y>800</y>
+                        <imagePath>/path/to/the/image/you/need.jpg</imagePath>
+                        -->
+                        <!--- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                        <!-- <scaling>2</scaling> --> <!-- OPTIONAL what you'd like to divide your image height and width by to reduce it. -->
+                        <!--
+                    </imageOverlay>
+                </imageOverlays>
+                -->
+             </configuration>
+         </execution>
+    </executions>
+</plugin>
++-----+

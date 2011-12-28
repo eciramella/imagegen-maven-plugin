@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faqs xmlns="http://maven.apache.org/FML/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd"
+  id="FAQ" title="Frequently Asked Questions">
+  <part id="General">
+    <title>General related FAQ's</title>
+    <faq id="What color picker should I use?">
+      <question>What color picker should I use??</question>
+      <answer>
+        <p>
+          During the development of this plugin, I used the color picker found here:
+          <br/>
+          
+          <a href="http://download.oracle.com/javase/tutorial/uiswing/components/colorchooser.html">Oracle JavaSE Color Chooser</a>
+          <br/>
+          Using other color pickers are fine.  <b>Note:</b> This plugin works on RGB values, nothing else will provide the results you're looking for.
+        </p>
+      </answer>
+    </faq>
+    <faq id="Layering">
+      <question>How come one text item is appearing on top of another?</question>
+      <answer>
+        <p>
+            The text is laid down in the image in order they are listed in the plugin configuration.  Order them as you see fit.
+        </p>
+      </answer>
+    </faq>
+  </part>
+  <part id="Text">
+    <title>Text related FAQ's</title>
+    <faq id="OpenType Font">
+      <question>Why is this plugin reporting my font specified is invalid?</question>
+      <answer>
+        <p>
+          This plugin doesn't work well with OpenType fonts.  I'm aware of this limitation and am active researching a way to solve this that doesn't require the 
+          user alter the font file.
+          
+          <br/>
+          However, if you're interested in using something like <a href="http://fontforge.sourceforge.net/">FontForge</a> to convert from and OpenType to a TrueType font.  
+          If you're using JDK 1.6, you may see different results.  Check <a href="http://mindprod.com/jgloss/opentype.html#JAVASUPPORT">here</a> for more font compatibility information.
+        </p>
+      </answer>
+    </faq>
+    <faq id="Transparency">
+      <question>Can I adjust the transparency of the text or the shadow?</question>
+      <answer>
+        <p>
+            Currently, you can't adjust the alpha channel of the fonts.  Eventually this feature will be rolled in.
+        </p>
+      </answer>
+    </faq>
+  </part>
+  <part id="Image">
+    <title>Image related FAQ's</title>
+    <faq id="Image orientation">
+      <question>Can I rotate an image?</question>
+      <answer>
+        <p>
+            Not at this time.  Whatever orientation the image is in is how it will be overlaid in the final image.
+        </p>
+      </answer>
+    </faq>
+  </part>
+</faqs>
