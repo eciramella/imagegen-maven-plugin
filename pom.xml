@@ -29,7 +29,7 @@
       </plugin>
       <!--
 				<plugin>
-		            <groupId>org.apache.maven.pluginss</groupId>
+		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>imagegen-maven-plugin</artifactId>
 		            <version>${project.version}</version>
                              <configuration>
@@ -57,7 +57,7 @@
 										<y>250</y>
                                         <shadow>true</shadow>
 										<text>SDFSDFSDFSDFSD sss</text>
-										<font>Arial Narrow</font>
+										<font>Ubuntu</font>
 		                             	<fontsize>20</fontsize>
                              		</textField>
                              		<textField>
@@ -65,7 +65,7 @@
 										<y>100</y>
                                         <shadow>true</shadow>
 										<text>BLAH BLAH BLAH</text>
-										<font>Arial Narrow</font>
+										<font>Ubuntu</font>
 		                             	<fontsize>40</fontsize>
                              		</textField>
                              	</textFields>
@@ -137,7 +137,7 @@
   		<build>
 			<plugins>
 				<plugin>
-		            <groupId>org.apache.maven.pluginss</groupId>
+		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>imagegen-maven-plugin</artifactId>
 		            <version>${project.version}</version>
                     <executions>
@@ -160,7 +160,7 @@
 									<x>10</x>
 									<y>10</y>
 									<text>2011 Foo, LLC.</text>
-									<font>Dialog</font>
+									<font>Ubuntu</font>
 									<fontsize>20</fontsize>
                              	</copyright>
                              	<textFields>
@@ -168,7 +168,7 @@
 	                             		<x>100</x>
 										<y>250</y>
 										<text>SDFSDFSDFSDFSD</text>
-										<font>Dialog</font>
+										<font>Ubuntu</font>
 		                             	<fontsize>12</fontsize>
                              		</textField>
                            		</textFields>
@@ -194,7 +194,7 @@
   		<build>
 			<plugins>
 				<plugin>
-		            <groupId>org.apache.maven.pluginss</groupId>
+		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>imagegen-maven-plugin</artifactId>
 		            <version>${project.version}</version>
                     <executions>
@@ -226,7 +226,7 @@
   		<build>
 			<plugins>
 				<plugin>
-		            <groupId>org.apache.maven.pluginss</groupId>
+		            <groupId>org.apache.maven.plugins</groupId>
 		            <artifactId>imagegen-maven-plugin</artifactId>
 		            <version>${project.version}</version>
                     <executions>
@@ -261,7 +261,7 @@
 										<y>250</y>
                                         <shadow>true</shadow>
 										<text>SDFSDFSDFSDFSD sss</text>
-										<font>Arial Narrow</font>
+										<font>Ubuntu</font>
 		                             	<fontsize>20</fontsize>
                                         <color>0,0,0</color>
                              		</textField>
@@ -270,7 +270,7 @@
 										<y>100</y>
                                         <shadow>true</shadow>
 										<text>FOO</text>
-										<font>Arial Narrow</font>
+										<font>Ubuntu</font>
 		                             	<fontsize>40</fontsize>
                                         <color>0,0,0</color>
                              		</textField>
