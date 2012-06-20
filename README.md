@@ -1,6 +1,17 @@
 This is a simple maven plugin for automatically generating images for use in your java projects.
 
-There is a ton of documentation within the poms.
+Have you ever needed to generate a splash screen image for an installer?
+
+Do you want to pull maven related tidbits into an image (version number for example)?
+
+Then this is the plugin for you!
+
+This can generate both single color and two-tone, gradient images.
+
+Need a drop shadow?  We have that too!
+
+There is a ton of documentation within the poms, but here's a quick plugin configuration 
+listing that will generate a single color image.
 
 ```xml
 <plugin>
