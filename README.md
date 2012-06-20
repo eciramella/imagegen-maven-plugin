@@ -13,6 +13,13 @@ Need a drop shadow?  We have that too!
 There is a ton of documentation within the poms, but here's a quick plugin configuration 
 listing that will generate a single color image.
 
+The BEST way to figure this plugin out (there are many knobs and dials) is to just clone the repo 
+and run:
+```
+mvn site
+```
+and read the resulting documentation target/site/index.html.
+
 ```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>

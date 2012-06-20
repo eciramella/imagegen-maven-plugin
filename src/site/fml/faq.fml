@@ -51,6 +51,14 @@
         </p>
       </answer>
     </faq>
+    <faq id="Special Characters">
+      <question>How can I add a copyright symbol or quotes?</question>
+      <answer>
+        <p>
+            You need to use an xml character entity reference.  There is a good list of them here - <a href="http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">wikipedia character reference page</a>.
+        </p>
+      </answer>
+    </faq>
   </part>
   <part id="Image">
     <title>Image related FAQ's</title>

@@ -31,6 +31,10 @@
     <tag>HEAD</tag>
     <url>https://github.com/eciramella/imagegen-maven-plugin</url>
   </scm>
+  <properties>
+    <maven.build.timestamp.format>&copy; MM dd yyyy</maven.build.timestamp.format>
+    <buildNumber>${maven.build.timestamp}</buildNumber>
+  </properties>
   <!--
   Other options should be:
   
@@ -180,7 +184,7 @@
                              	<copyright>
 					<x>15</x>
 					<y>15</y>
-					<text>2011 Foo, LLC.</text>
+					<text>${maven.build.timestamp} Foo, LLC.</text>
 					<font>Ubuntu</font>
 					<fontsize>20</fontsize>
                              	</copyright>
@@ -198,6 +202,7 @@
 						<text>of the ${project.name}!</text>
 						<font>Ubuntu</font>
 		                             	<fontsize>20</fontsize>
+                                                <color>0,45,175</color>
                              		</textField>
                            	</textFields>
                              	<colorStart>
