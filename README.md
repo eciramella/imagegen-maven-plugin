@@ -32,8 +32,10 @@ There is a ton of documentation within the poms.
                     <text>2011 Foo, LLC.</text>
                     <font>Monospaced.bolditalic</font>
                     <fontsize>20</fontsize> -->
-                    <!-- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
-                    <!-- <color>0,0,0</color> --> <!-- OPTIONAL text will default to black if this is omitted. -->
+		    <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                    <!-- <shadow>false</shadow> --> 
+                    <!-- OPTIONAL text will default to black if this is omitted. -->
+                    <!-- <color>0,0,0</color> --> 
                 <!--
                 </copyright>
                 -->
@@ -46,8 +48,10 @@ There is a ton of documentation within the poms.
                         <text>Hello Image!</text>
                         <font>Arial Narrow</font>
                         <fontsize>20</fontsize> -->
-                        <!-- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
-                        <!-- <color>0,0,0</color> --> <!-- OPTIONAL text will default to black if this is omitted. -->
+                        <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                        <!-- <shadow>false</shadow> -->
+                        <!-- OPTIONAL text will default to black if this is omitted. -->
+                        <!-- <color>0,0,0</color> --> 
                      <!--   
                     </textField>
                 </textFields>
@@ -59,8 +63,10 @@ There is a ton of documentation within the poms.
                         <y>800</y>
                         <imagePath>/path/to/the/image/you/need.jpg</imagePath>
                         -->
-                        <!--- <shadow>false</shadow> --> <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
-                        <!-- <scaling>2</scaling> --> <!-- OPTIONAL what you'd like to divide your image height and width by to reduce it. -->
+                        <!-- OPTIONAL set to true if you'd like a drop shadow behind your image. -->
+                        <!--- <shadow>false</shadow> --> 
+                        <!-- OPTIONAL what you'd like to divide your image height and width by to reduce it. -->
+                        <!-- <scaling>2</scaling> --> 
                         <!--
                     </imageOverlay>
                 </imageOverlays>
