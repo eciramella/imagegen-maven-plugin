@@ -178,21 +178,28 @@
                              	<secondColorX>400</secondColorX>
                              	<secondColorY>400</secondColorY>
                              	<copyright>
-									<x>10</x>
-									<y>10</y>
-									<text>2011 Foo, LLC.</text>
-									<font>Ubuntu</font>
-									<fontsize>20</fontsize>
+					<x>15</x>
+					<y>15</y>
+					<text>2011 Foo, LLC.</text>
+					<font>Ubuntu</font>
+					<fontsize>20</fontsize>
                              	</copyright>
                              	<textFields>
                              		<textField>
-	                             		<x>100</x>
-										<y>250</y>
-										<text>SDFSDFSDFSDFSD</text>
-										<font>Ubuntu</font>
-		                             	<fontsize>12</fontsize>
+	                             		<x>50</x>
+						<y>250</y>
+						<text>Welcome to version ${project.version}</text>
+						<font>Ubuntu</font>
+		                             	<fontsize>20</fontsize>
                              		</textField>
-                           		</textFields>
+                             		<textField>
+	                             		<x>60</x>
+						<y>270</y>
+						<text>of the ${project.name}!</text>
+						<font>Ubuntu</font>
+		                             	<fontsize>20</fontsize>
+                             		</textField>
+                           	</textFields>
                              	<colorStart>
                              		<r>0</r>
                              		<g>100</g>
