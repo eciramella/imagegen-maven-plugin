@@ -9,7 +9,28 @@
   <description>
     This plugin is for generating images during your build process for use by downstream build related items such as an installer.
   </description>
-  
+  <url>
+  http://eciramella.github.com/imagegen-maven-plugin
+  </url>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/eciramella/imagegen-maven-plugin/issues</url>
+  </issueManagement>  
+  <developers>
+    <developer>
+      <id>eciramella</id>
+      <name>Edward Ciramella</name>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git://github.com/eciramella/imagegen-maven-plugin.git</connection>
+    <developerConnection>scm:git://github.com/eciramella/imagegen-maven-plugin.git</developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/eciramella/imagegen-maven-plugin</url>
+  </scm>
   <!--
   Other options should be:
   

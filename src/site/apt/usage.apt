@@ -19,3 +19,5 @@ General Usage
 +-----+
 mvn imagegen:generate
 +-----+
+
+  See the examples section to the left for pom configuration.
