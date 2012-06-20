@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Imagegen-maven-plugin : This is a little maven plugin for generating images automatically.  It can consume the pom information to automatically inject things like your version string into the image." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Imagegen-maven-plugin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/eciramella/imagegen-maven-plugin">View on GitHub</a>
+
+          <h1 id="project_title">Imagegen-maven-plugin</h1>
+          <h2 id="project_tagline">This is a little maven plugin for generating images automatically.  It can consume the pom information to automatically inject things like your version string into the image.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/eciramella/imagegen-maven-plugin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/eciramella/imagegen-maven-plugin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>This is a simple maven plugin for automatically generating images for use in your java projects.</p>
+
+<p>There is a ton of documentation within the poms.</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>imagegen-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>${project.version}<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;executions&gt;</span>
+         <span class="nt">&lt;execution&gt;</span>
+             <span class="nt">&lt;id&gt;</span>generateImage<span class="nt">&lt;/id&gt;</span>
+             <span class="nt">&lt;phase&gt;</span>generate-sources<span class="nt">&lt;/phase&gt;</span>
+             <span class="nt">&lt;goals&gt;</span>
+                 <span class="nt">&lt;goal&gt;</span>generate<span class="nt">&lt;/goal&gt;</span>
+             <span class="nt">&lt;/goals&gt;</span>
+             <span class="nt">&lt;configuration&gt;</span>
+                <span class="nt">&lt;gradient&gt;</span>false<span class="nt">&lt;/gradient&gt;</span>
+                <span class="nt">&lt;type&gt;</span>png<span class="nt">&lt;/type&gt;</span>
+                <span class="nt">&lt;height&gt;</span>1000<span class="nt">&lt;/height&gt;</span>
+                <span class="nt">&lt;width&gt;</span>1000<span class="nt">&lt;/width&gt;</span>
+                <span class="nt">&lt;colorSolid&gt;</span>
+                    <span class="nt">&lt;r&gt;</span>0<span class="nt">&lt;/r&gt;</span>
+                    <span class="nt">&lt;g&gt;</span>189<span class="nt">&lt;/g&gt;</span>
+                    <span class="nt">&lt;b&gt;</span>255<span class="nt">&lt;/b&gt;</span>
+                <span class="nt">&lt;/colorSolid&gt;</span>
+
+                <span class="c">&lt;!-- OPTIONAL</span>
+<span class="c">                &lt;copyright&gt;</span>
+<span class="c">                    &lt;x&gt;10&lt;/x&gt;</span>
+<span class="c">                    &lt;y&gt;20&lt;/y&gt;</span>
+<span class="c">                    &lt;text&gt;2011 Foo, LLC.&lt;/text&gt;</span>
+<span class="c">                    &lt;font&gt;Monospaced.bolditalic&lt;/font&gt;</span>
+<span class="c">                    &lt;fontsize&gt;20&lt;/fontsize&gt; --&gt;</span>
+            <span class="c">&lt;!-- OPTIONAL set to true if you'd like a drop shadow behind your image. --&gt;</span>
+                    <span class="c">&lt;!-- &lt;shadow&gt;false&lt;/shadow&gt; --&gt;</span> 
+                    <span class="c">&lt;!-- OPTIONAL text will default to black if this is omitted. --&gt;</span>
+                    <span class="c">&lt;!-- &lt;color&gt;0,0,0&lt;/color&gt; --&gt;</span> 
+                <span class="c">&lt;!--</span>
+<span class="c">                &lt;/copyright&gt;</span>
+<span class="c">                --&gt;</span>
+
+                <span class="c">&lt;!-- OPTIONAL</span>
+<span class="c">                &lt;textFields&gt;</span>
+<span class="c">                    &lt;textField&gt;</span>
+<span class="c">                        &lt;x&gt;100&lt;/x&gt;</span>
+<span class="c">                        &lt;y&gt;250&lt;/y&gt;</span>
+<span class="c">                        &lt;text&gt;Hello Image!&lt;/text&gt;</span>
+<span class="c">                        &lt;font&gt;Arial Narrow&lt;/font&gt;</span>
+<span class="c">                        &lt;fontsize&gt;20&lt;/fontsize&gt; --&gt;</span>
+                        <span class="c">&lt;!-- OPTIONAL set to true if you'd like a drop shadow behind your image. --&gt;</span>
+                        <span class="c">&lt;!-- &lt;shadow&gt;false&lt;/shadow&gt; --&gt;</span>
+                        <span class="c">&lt;!-- OPTIONAL text will default to black if this is omitted. --&gt;</span>
+                        <span class="c">&lt;!-- &lt;color&gt;0,0,0&lt;/color&gt; --&gt;</span> 
+                     <span class="c">&lt;!--   </span>
+<span class="c">                    &lt;/textField&gt;</span>
+<span class="c">                &lt;/textFields&gt;</span>
+<span class="c">                --&gt;</span>
+                <span class="c">&lt;!-- OPTIONAL</span>
+<span class="c">                &lt;imageOverlays&gt;</span>
+<span class="c">                    &lt;imageOverlay&gt;</span>
+<span class="c">                        &lt;x&gt;100&lt;/x&gt;</span>
+<span class="c">                        &lt;y&gt;800&lt;/y&gt;</span>
+<span class="c">                        &lt;imagePath&gt;/path/to/the/image/you/need.jpg&lt;/imagePath&gt;</span>
+<span class="c">                        --&gt;</span>
+                        <span class="c">&lt;!-- OPTIONAL set to true if you'd like a drop shadow behind your image. --&gt;</span>
+                        <span class="c">&lt;!--- &lt;shadow&gt;false&lt;/shadow&gt; --&gt;</span> 
+                        <span class="c">&lt;!-- OPTIONAL what you'd like to divide your image height and width by to reduce it. --&gt;</span>
+                        <span class="c">&lt;!-- &lt;scaling&gt;2&lt;/scaling&gt; --&gt;</span> 
+                        <span class="c">&lt;!--</span>
+<span class="c">                    &lt;/imageOverlay&gt;</span>
+<span class="c">                &lt;/imageOverlays&gt;</span>
+<span class="c">                --&gt;</span>
+             <span class="nt">&lt;/configuration&gt;</span>
+         <span class="nt">&lt;/execution&gt;</span>
+    <span class="nt">&lt;/executions&gt;</span>
+<span class="nt">&lt;/plugin&gt;</span>
+</pre>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Imagegen-maven-plugin maintained by <a href="https://github.com/eciramella">eciramella</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
