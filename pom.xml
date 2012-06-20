@@ -312,35 +312,38 @@
                              		<imageOverlay>
 	                             		<x>100</x>
 										<y>400</y>
-                                        <shadow>true</shadow>
-										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+                                        <!--shadow>true</shadow-->
+										<imagePath>/home/eciramella/src/oss/imagegen-maven-plugin/selfpic_sm.jpg</imagePath>
+<rotation>30</rotation>
                                         <!-- by NOT having scaling here, we should default to 100% -->
                              		</imageOverlay>
+<!--
                              		<imageOverlay>
 	                             		<x>100</x>
 										<y>800</y>
                                         <shadow>true</shadow>
-										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+										<imagePath></imagePath>
 		                             	<scaling>2</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
 										<y>100</y>
-										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+										<imagePath>></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
 										<y>200</y>
-										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+										<imagePath></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
 										<y>350</y>
-										<imagePath><!-- insert path to an image here.  Put one in SRC and TEST --></imagePath>
+										<imagePath></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
+                                           -->
                              	</imageOverlays>
                              </configuration>
                          </execution>

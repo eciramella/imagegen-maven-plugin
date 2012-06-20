@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 import java.awt.RenderingHints;
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -77,12 +79,12 @@ public abstract class AbstractImage {
         for (int x = 0; x < imageOverlays.length; x++) {
 
             try {
-                final BufferedImage img = ImageIO.read(new File(imageOverlays[x].get("imagePath")
+                BufferedImage img = ImageIO.read(new File(imageOverlays[x].get("imagePath")
                         .toString()));
-
                 final int xcoord = Integer.parseInt(imageOverlays[x].get("x"));
                 final int ycoord = Integer.parseInt(imageOverlays[x].get("y"));
                 int scale = 0;
+
                 int imageHeight = img.getHeight();
                 int imageWidth = img.getWidth();
                 if (imageOverlays[x].get("scaling") != null) {
@@ -90,13 +92,27 @@ public abstract class AbstractImage {
                     if (scale > 1) {
                         imageHeight = img.getHeight() / scale;
                         imageWidth = img.getWidth() / scale;
+                    } else {
+                        throw new MojoExecutionException("Sorry - we only accept POSITIVE scaling integers.  You entered " +
+                                scale);
                     }
+
+                }
+                if (imageOverlays[x].get("rotation") != null)
+                {
+                    int rotate = Integer.parseInt(imageOverlays[x].get("rotation"));
+                    log.info("rotating the image..." + rotate);
+                    AffineTransform tx = new AffineTransform();
+                    tx.rotate(rotate, imageWidth, imageHeight);
+                    AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+                    img = op.filter(img, null);
                 }
                 if (Boolean.valueOf(imageOverlays[x].get("shadow"))) {
                     g2d.setColor(new Color(0, 0, 0, 100));
                     g2d.fillRect(xcoord + 2, ycoord + 2, imageWidth, imageHeight);
                 }
                 g2d.drawImage(img, xcoord, ycoord, imageWidth, imageHeight, null);
+
             } catch (final IOException e) {
                 throw new MojoExecutionException("Could not add the image(s) you've specified: "
                         + '\n' + '\t' + "\"" + imageOverlays[x].get("imagePath") + "\" " + '\n'

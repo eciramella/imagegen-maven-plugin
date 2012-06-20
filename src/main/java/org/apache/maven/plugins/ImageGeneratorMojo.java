@@ -110,13 +110,20 @@ public class ImageGeneratorMojo extends AbstractMojo {
     private Map<String, String>[] imageOverlays;
 
     /**
-     * The RGB values of the starting color.
+     * The details surrounding the images you'd like to overlay.
      * 
-     * r - the red value
+     * x - the X coordinate of the image to overlay.
+     *
+     * y - the Y coordinate of the image to overlay.
      * 
-     * g - the green value
-     * 
-     * b - the blue value
+     * shadow - (boolean) - add a drop shadow.
+     *
+     * scaling - This integer is used to divide the actual settings. So 2 will be 1/2 of the original size.
+     *
+     * rotation - This integer determines what degree from 0 we should rotate the x axis to the y axis.
+     *
+     * imagePath - The LOCAL path to where the overlay image should be found.  URLS are not currently
+     * supported.
      * 
      * @parameter
      */
