@@ -280,30 +280,30 @@
                              		<b>255</b>
                              	</colorSolid>
                              	<copyright>
-									<x>10</x>
-									<y>20</y>
-                                    <shadow>true</shadow>
-									<text>2011 Foo, LLC.</text>
-									<font>Monospaced.bolditalic</font>
-									<fontsize>20</fontsize>
-                                    <color>0,0,0</color>
+					<x>10</x>
+					<y>20</y>
+                                    	<shadow>false</shadow>
+					<text>2011 Foo, LLC.</text>
+					<font>Monospaced.bolditalic</font>
+					<fontsize>20</fontsize>
+                                	<color>0,0,0</color>
                              	</copyright>
                              	<textFields>
                              		<textField>
 	                             		<x>100</x>
-										<y>250</y>
-                                        <shadow>true</shadow>
-										<text>SDFSDFSDFSDFSD sss</text>
-										<font>Ubuntu</font>
+						<y>250</y>
+                                        	<shadow>false</shadow>
+						<text>SDFSDFSDFSDFSD sss</text>
+						<font>Ubuntu</font>
 		                             	<fontsize>20</fontsize>
-                                        <color>0,0,0</color>
+                                        	<color>0,0,0</color>
                              		</textField>
                              		<textField>
 	                             		<x>100</x>
-										<y>100</y>
-                                        <shadow>true</shadow>
-										<text>FOO</text>
-										<font>Ubuntu</font>
+						<y>100</y>
+                                        	<shadow>false</shadow>
+						<text>FOO</text>
+						<font>Ubuntu</font>
 		                             	<fontsize>40</fontsize>
                                         <color>0,0,0</color>
                              		</textField>
@@ -311,36 +311,36 @@
                              	<imageOverlays>
                              		<imageOverlay>
 	                             		<x>100</x>
-										<y>400</y>
-                                        <!--shadow>true</shadow-->
-										<imagePath>/home/eciramella/src/oss/imagegen-maven-plugin/selfpic_sm.jpg</imagePath>
-<rotation>30</rotation>
-                                        <!-- by NOT having scaling here, we should default to 100% -->
+						<y>400</y>
+                                                <!--shadow>true</shadow-->
+					        <imagePath>/home/eciramella/src/oss/imagegen-maven-plugin/selfpic_sm.jpg</imagePath>
+                                                <rotation>3</rotation>
+                                                <!-- by NOT having scaling here, we should default to 100% -->
                              		</imageOverlay>
-<!--
+                                        <!--
                              		<imageOverlay>
 	                             		<x>100</x>
-										<y>800</y>
-                                        <shadow>true</shadow>
-										<imagePath></imagePath>
+						<y>800</y>
+                                                <shadow>true</shadow>
+						<imagePath></imagePath>
 		                             	<scaling>2</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
-										<y>100</y>
-										<imagePath>></imagePath>
+						<y>100</y>
+						<imagePath>></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
-										<y>200</y>
-										<imagePath></imagePath>
+						<y>200</y>
+						<imagePath></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
                              		<imageOverlay>
 	                             		<x>100</x>
-										<y>350</y>
-										<imagePath></imagePath>
+						<y>350</y>
+						<imagePath></imagePath>
 		                             	<scaling>3</scaling>
                              		</imageOverlay>
                                            -->

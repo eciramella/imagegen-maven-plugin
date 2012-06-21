@@ -8,6 +8,7 @@ import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
@@ -81,6 +82,8 @@ public abstract class AbstractImage {
             try {
                 BufferedImage img = ImageIO.read(new File(imageOverlays[x].get("imagePath")
                         .toString()));
+
+                AffineTransform at = new AffineTransform();
                 final int xcoord = Integer.parseInt(imageOverlays[x].get("x"));
                 final int ycoord = Integer.parseInt(imageOverlays[x].get("y"));
                 int scale = 0;
@@ -102,9 +105,10 @@ public abstract class AbstractImage {
                 {
                     int rotate = Integer.parseInt(imageOverlays[x].get("rotation"));
                     log.info("rotating the image..." + rotate);
-                    AffineTransform tx = new AffineTransform();
-                    tx.rotate(rotate, imageWidth, imageHeight);
-                    AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
+                    at.translate(0.5 * img.getHeight(), 0.5 * img.getWidth());
+                    at.rotate(rotate);
+                    at.translate(-0.5 * img.getHeight(), -0.5 * img.getWidth());
+                    AffineTransformOp op = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
                     img = op.filter(img, null);
                 }
                 if (Boolean.valueOf(imageOverlays[x].get("shadow"))) {
