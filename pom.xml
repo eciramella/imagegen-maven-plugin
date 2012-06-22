@@ -53,85 +53,84 @@
         </configuration>
       </plugin>
       <!--
-				<plugin>
-		            <groupId>org.apache.maven.plugins</groupId>
-		            <artifactId>imagegen-maven-plugin</artifactId>
-		            <version>${project.version}</version>
-                             <configuration>
-                             
-                             	<gradient>false</gradient>
-                             	<type>png</type>
-                             	<height>1000</height>
-                             	<width>1000</width>
-                             	<colorSolid>
-                             		<r>0</r>
-                             		<g>189</g>
-                             		<b>255</b>
-                             	</colorSolid>
-                             	<copyright>
-									<x>10</x>
-									<y>20</y>
-                                    <shadow>true</shadow>
-									<text>2011 FOO, LLC.</text>
-									<font>Verdana</font>
-									<fontsize>20</fontsize>
-                             	</copyright>
-                             	<textFields>
-                             		<textField>
-	                             		<x>100</x>
-										<y>250</y>
+		<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>imagegen-maven-plugin</artifactId>
+	            <version>${project.version}</version>
+                    <configuration>
+                        <gradient>false</gradient>
+                        <type>png</type>
+                        <height>1000</height>
+                        <width>1000</width>
+                        <colorSolid>
+                        	<r>0</r>
+                             	<g>189</g>
+                             	<b>255</b>
+                         </colorSolid>
+                         <copyright>
+				<x>10</x>
+				<y>20</y>
+                                <shadow>true</shadow>
+				<text>2011 FOO, LLC.</text>
+				<font>Verdana</font>
+				<fontsize>20</fontsize>
+                         </copyright>
+                         <textFields>
+                         	<textField>
+	                       		<x>100</x>
+					<y>250</y>
                                         <shadow>true</shadow>
-										<text>SDFSDFSDFSDFSD sss</text>
-										<font>Ubuntu</font>
-		                             	<fontsize>20</fontsize>
-                             		</textField>
-                             		<textField>
-	                             		<x>100</x>
-										<y>100</y>
+					<text>SDFSDFSDFSDFSD sss</text>
+					<font>Ubuntu</font>
+		                       	<fontsize>20</fontsize>
+                             	</textField>
+                             	<textField>
+	                       		<x>100</x>
+					<y>100</y>
                                         <shadow>true</shadow>
-										<text>BLAH BLAH BLAH</text>
-										<font>Ubuntu</font>
-		                             	<fontsize>40</fontsize>
-                             		</textField>
-                             	</textFields>
-                             	<imageOverlays>
-                             		<imageOverlay>
-	                             		<x>100</x>
-										<y>400</y>
+					<text>BLAH BLAH BLAH</text>
+					<font>Ubuntu</font>
+		                       	<fontsize>40</fontsize>
+                             	</textField>
+                       	</textFields>
+                       	<imageOverlays>
+                       		<imageOverlay>
+	                     		<x>100</x>
+					<y>400</y>
                                         <shadow>true</shadow>
-										<imagePath><insert path to an image here.  Put one in SRC and TEST</imagePath>
-                                        -->
+					<imagePath><insert path to an image here.  Put one in SRC and TEST</imagePath>
+                                       -->
                                         <!-- by NOT having scaling here, we should default to 100% -->
                                         <!--
-                             		</imageOverlay>
-                             		<imageOverlay>
-	                             		<x>100</x>
-										<y>800</y>
+                       		</imageOverlay>
+                       		<imageOverlay>
+	                      		<x>100</x>
+					<y>800</y>
                                         <shadow>true</shadow>
-										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
-		                             	<scaling>2</scaling>
-                             		</imageOverlay>
-                             		<imageOverlay>
-	                             		<x>100</x>
-										<y>100</y>
-										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
-		                             	<scaling>3</scaling>
-                             		</imageOverlay>
-                             		<imageOverlay>
-	                             		<x>100</x>
-										<y>200</y>
-										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
-		                             	<scaling>3</scaling>
-                             		</imageOverlay>
-                             		<imageOverlay>
-	                             		<x>100</x>
-										<y>350</y>
-										<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
-		                             	<scaling>3</scaling>
-                             		</imageOverlay>
-                             	</imageOverlays>
-                             </configuration>
-				</plugin>
+					<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                       	<scaling>2</scaling>
+                             	</imageOverlay>
+                             	<imageOverlay>
+	                       		<x>100</x>
+					<y>100</y>
+					<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                       	<scaling>3</scaling>
+                             	</imageOverlay>
+                             	<imageOverlay>
+	                        	<x>100</x>
+					<y>200</y>
+					<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                       	<scaling>3</scaling>
+                             	</imageOverlay>
+                             	<imageOverlay>
+	                        	<x>100</x>
+					<y>350</y>
+					<imagePath>insert path to an image here.  Put one in SRC and TEST</imagePath>
+		                       	<scaling>3</scaling>
+                             	</imageOverlay>
+                            </imageOverlays>
+                        </configuration>
+		</plugin>
                 -->
     </plugins>
   </build>
