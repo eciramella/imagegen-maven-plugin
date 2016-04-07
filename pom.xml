@@ -47,7 +47,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.1</version>
+        <version>3.3</version>
         <configuration>
           <locales>en</locales>
         </configuration>
@@ -81,7 +81,7 @@
 					<y>250</y>
                                         <shadow>true</shadow>
 					<text>SDFSDFSDFSDFSD sss</text>
-					<font>Ubuntu</font>
+					<font>Times-Roman</font>
 		                       	<fontsize>20</fontsize>
                              	</textField>
                              	<textField>
@@ -89,7 +89,7 @@
 					<y>100</y>
                                         <shadow>true</shadow>
 					<text>BLAH BLAH BLAH</text>
-					<font>Ubuntu</font>
+					<font>Times-Roman</font>
 		                       	<fontsize>40</fontsize>
                              	</textField>
                        	</textFields>
@@ -184,7 +184,7 @@
 					<x>15</x>
 					<y>15</y>
 					<text>${maven.build.timestamp} Foo, LLC.</text>
-					<font>Ubuntu</font>
+					<font>Times-Roman</font>
 					<fontsize>20</fontsize>
                              	</copyright>
                              	<textFields>
@@ -192,14 +192,14 @@
 	                             		<x>50</x>
 						<y>250</y>
 						<text>Welcome to version ${project.version}</text>
-						<font>Ubuntu</font>
+						<font>Times-Roman</font>
 		                             	<fontsize>20</fontsize>
                              		</textField>
                              		<textField>
 	                             		<x>60</x>
 						<y>270</y>
 						<text>of the ${project.name}!</text>
-						<font>Ubuntu</font>
+						<font>Times-Roman</font>
 		                             	<fontsize>20</fontsize>
                                                 <color>0,45,175</color>
                              		</textField>
@@ -293,7 +293,7 @@
 						<y>250</y>
                                         	<shadow>false</shadow>
 						<text>SDFSDFSDFSDFSD sss</text>
-						<font>Ubuntu</font>
+						<font>Times-Roman</font>
 		                             	<fontsize>20</fontsize>
                                         	<color>0,0,0</color>
                              		</textField>
@@ -302,7 +302,7 @@
 						<y>100</y>
                                         	<shadow>false</shadow>
 						<text>FOO</text>
-						<font>Ubuntu</font>
+						<font>Times-Roman</font>
 		                             	<fontsize>40</fontsize>
                                         <color>0,0,0</color>
                              		</textField>
